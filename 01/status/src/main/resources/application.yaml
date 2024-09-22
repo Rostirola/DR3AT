@@ -1,0 +1,15 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: status
+  main:
+    allow-bean-definition-overriding: true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

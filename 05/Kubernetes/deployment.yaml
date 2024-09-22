@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: status
+  labels:
+    app: status
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: status
+  template:
+    metadata:
+      labels:
+        app: status
+    spec:
+      containers:
+        - name: status
+          image: rostirola/status:latest
+          ports:
+            - containerPort: 8080

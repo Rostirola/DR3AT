@@ -1,0 +1,14 @@
+services:
+  eureka:
+    container_name: eureka-service
+    networks:
+      - eureka_net
+    ports:
+      - "8761:8761"
+    build:
+      context: ../eureka
+      dockerfile: Dockerfile
+    restart: always
+networks:
+  eureka_net:
+    driver: bridge
