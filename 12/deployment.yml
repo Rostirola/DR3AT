@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microsservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: microsservice
+  template:
+    metadata:
+      labels:
+        app: microsservice
+    spec:
+      containers:
+        - name: microsservice
+          image: rostirola/microsservice:latest
+          ports:
+            - containerPort: 8080
